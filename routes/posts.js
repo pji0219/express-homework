@@ -15,10 +15,9 @@ const POST = [
   },
 ];
 
-const postLen = POST.length;
-
 router.get('/', (req, res) => {
   if (POST) {
+    const postLen = POST.length;
     res.render('index', { POST, postCounts: postLen });
   } else {
     const err = new Error('조회할 포스트가 없습니다.');
